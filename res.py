@@ -156,10 +156,7 @@ def p_qa(ctx: List[Tuple[str,str]], q: str, lang: str):
     return f"Answer the question strictly using ONLY the context below in {lang}. If the answer is not in the context, say 'I cannot find the answer in the paper.' Do not use outside knowledge.\n\n{context}\n\nQuestion: {q}"
 
 # ------------- Exports -------------
-def build_md(title: str, tldr: str, sections: Dict[str,str], gl
-
-
-s: str, contrib: str) -> str:
+def build_md(title: str, tldr: str, sections: Dict[str,str], gloss: str, contrib: str) -> str:
     lines = [f"# {title}", "", "## TL;DR", tldr, "", "## Explanations"]
     for s, txt in sections.items():
         lines += [f"### {s.title()}", txt, ""]
